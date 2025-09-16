@@ -263,91 +263,103 @@
     </div>
 </section>
 
-    <!-- AVATA (DJI) -->
+     <!-- AVATA (DJI) -->
     <section id="avata" class="relative bg-[#F7F8FA] text-slate-900">
       <div class="mx-auto max-w-7xl px-5 py-20">
         <header class="mb-12 text-center">
           <p class="text-xs font-semibold tracking-widest text-slate-500 uppercase">Equipment</p>
           <h2 class="mt-2 font-display text-3xl md:text-4xl font-semibold tracking-tight">DJI Avata for Real Estate</h2>
-          <p class="mt-3 max-w-3xl mx-auto text-slate-600">Our primary FPV cinewhoop. Ducted prop guards and agile control enable safe indoor flights, fluid transitions and one-take storytelling across exterior and interior spaces.</p>
+          <p class="mt-3 max-w-3xl mx-auto text-slate-600">Our primary FPV cinewhoop. Ducted prop guards and agile control enable safe indoor flights, fluid transitions and one‑take storytelling across exterior and interior spaces.</p>
         </header>
 
-        <!-- Layout: tarjetas laterales + círculo central -->
-        <div class="grid items-center gap-8 lg:grid-cols-3">
-          <!-- LEFT STACK -->
-          <div class="relative hidden lg:block h-[420px]">
-            <div class="stack-layer avata-card absolute left-0 top-0 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md cursor-pointer" aria-expanded="false">
-              <div class="relative z-[1]">
-                <div class="flex items-center gap-2 text-slate-400 text-xs">
-                  <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">01</span>
-                  <span class="uppercase tracking-wide">Advanced Obstacle Avoidance</span>
-                </div>
-                <h4 class="mt-2 font-medium">Fly safely with smart sensors</h4>
-                <p class="mt-2 text-sm text-slate-600">Onboard sensing helps detect nearby objects, supporting safer paths.</p>
+        <!-- LEFT · CENTER · RIGHT -->
+        <div class="avata-stage grid items-center gap-8 lg:grid-cols-3 xl:grid-cols-[1.1fr_1.4fr_1.1fr]">
+
+          <!-- LEFT STACK (01 deepest ← 03 front near circle) -->
+          <div class="avata-side hidden lg:flex items-center justify-end stack-line pr-6 xl:pr-8">
+            <article class="stack-card d1 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
+              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">01</span>
+                <span class="uppercase">Advanced Obstacle Avoidance</span>
               </div>
-            </div>
-            <div class="stack-layer absolute left-6 top-24 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md opacity-80 blur-[0.3px] scale-[0.98]">
-              <div class="flex items-center gap-2 text-slate-400 text-xs"><span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">02</span><span class="uppercase tracking-wide">Precision Control</span></div>
-              <h4 class="mt-2 font-medium text-slate-600">Agile motion in tight spaces</h4>
-              <p class="mt-2 text-sm text-slate-500">Confident moves around furniture for elegant reveals.</p>
-            </div>
-            <div class="stack-layer absolute left-12 top-44 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md opacity-60 blur-[0.6px] scale-[0.96]">
-              <div class="flex items-center gap-2 text-slate-400 text-xs"><span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">03</span><span class="uppercase tracking-wide">Advanced Stabilization</span></div>
-              <h4 class="mt-2 font-medium text-slate-600">Silky, steady footage</h4>
-              <p class="mt-2 text-sm text-slate-500">Minimal micro-jitter for clean editing.</p>
-            </div>
+              <h4 class="mt-2 font-medium">Fly safely with smart sensors</h4>
+              <p class="mt-1 text-sm text-slate-600">Onboard sensing helps detect nearby objects for safer paths through doors and tight corners.</p>
+            </article>
+            <article class="stack-card d2 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
+              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">02</span>
+                <span class="uppercase">Precision Control</span>
+              </div>
+              <h4 class="mt-2 font-medium">Agile motion in tight spaces</h4>
+              <p class="mt-1 text-sm text-slate-600">Confident moves around furniture for elegant reveals and transitions.</p>
+            </article>
+            <article class="stack-card d3 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
+              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">03</span>
+                <span class="uppercase">Advanced Stabilization</span>
+              </div>
+              <h4 class="mt-2 font-medium">Silky, steady footage</h4>
+              <p class="mt-1 text-sm text-slate-600">Cinematic motion with minimal micro‑jitter for clean editing.</p>
+            </article>
           </div>
 
-          <!-- CENTER CIRCLE -->
-          <div class="relative mx-auto w-full max-w-xl">
-            <div class="relative aspect-square rounded-full bg-white ring-1 ring-black/5 shadow-xl flex items-center justify-center overflow-hidden">
+          <!-- CENTER CIRCLE (image restored) -->
+          <div class="relative mx-auto w-full max-w-[48rem] xl:max-w-[60rem]">
+            <div class="relative avata-circle aspect-square rounded-full bg-white ring-1 ring-black/5 shadow-xl flex items-center justify-center overflow-hidden">
               <div class="absolute inset-0 rounded-full border border-slate-200"></div>
               <div class="absolute inset-6 rounded-full border border-slate-100"></div>
-              <img src="https://se-cdn.djiits.com/tpc/uploads/spu/cover/daf2c8fd679eb886c0ba45a1d015a5fc@xlarge.png" alt="DJI Avata FPV drone" class="relative z-[1] w-4/5 max-w-md drop-shadow-xl pointer-events-none select-none" />
+              <img src="https://se-cdn.djiits.com/tpc/uploads/spu/cover/daf2c8fd679eb886c0ba45a1d015a5fc@xlarge.png" alt="DJI Avata FPV drone" class="relative z-[1] w-[98%] max-w-none drop-shadow-xl pointer-events-none select-none" />
             </div>
-            <div class="mt-6 text-center">
-              <h3 class="text-xl font-semibold">4K Ultra-HD Camera</h3>
-              <p class="mt-1 text-slate-600">Capture stunning walkthroughs with incredible clarity.</p>
-            </div>
+            
           </div>
 
-          <!-- RIGHT STACK -->
-          <div class="relative hidden lg:block h-[420px]">
-            <div class="stack-layer avata-card absolute right-0 top-0 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md cursor-pointer" aria-expanded="false">
-              <div class="relative z-[1]">
-                <div class="flex items-center gap-2 text-slate-400 text-xs">
-                  <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">02</span>
-                  <span class="uppercase tracking-wide">Intelligent Flight Modes</span>
-                </div>
-                <h4 class="mt-2 font-medium">Follow, Waypoints, and more</h4>
-                <p class="mt-2 text-sm text-slate-600">Automated aids that keep moves smooth and repeatable.</p>
+          <!-- RIGHT STACK (02 front near circle → 04 deepest) -->
+          <div class="avata-side hidden lg:flex items-center justify-start stack-line pl-6 xl:pl-8">
+            <article class="stack-card d3 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
+              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">02</span>
+                <span class="uppercase">Intelligent Flight Modes</span>
               </div>
-            </div>
-            <div class="stack-layer absolute right-6 top-24 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md opacity-80 blur-[0.3px] scale-[0.98]">
-              <div class="flex items-center gap-2 text-slate-400 text-xs"><span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">03</span><span class="uppercase tracking-wide">4K Recording</span></div>
-              <h4 class="mt-2 font-medium text-slate-600">High-detail image</h4>
-              <p class="mt-2 text-sm text-slate-500">Consistent color for YouTube, MLS and ads.</p>
-            </div>
-            <div class="stack-layer absolute right-12 top-44 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md opacity-60 blur-[0.6px] scale-[0.96]">
-              <div class="flex items-center gap-2 text-slate-400 text-xs"><span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">04</span><span class="uppercase tracking-wide">Extended Flight Time</span></div>
-              <h4 class="mt-2 font-medium text-slate-600">Up to 20+ minutes</h4>
-              <p class="mt-2 text-sm text-slate-500">Plenty of endurance for multiple takes and exteriors.</p>
-            </div>
+              <h4 class="mt-2 font-medium">Follow, Waypoints, and more</h4>
+              <p class="mt-1 text-sm text-slate-600">Automated aids that keep moves smooth and repeatable.</p>
+            </article>
+            <article class="stack-card d2 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
+              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">03</span>
+                <span class="uppercase">4K Recording</span>
+              </div>
+              <h4 class="mt-2 font-medium">High‑detail image</h4>
+              <p class="mt-1 text-sm text-slate-600">Sharp picture and consistent color for YouTube, MLS and ads.</p>
+            </article>
+            <article class="stack-card d1 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
+              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">04</span>
+                <span class="uppercase">Extended Flight Time</span>
+              </div>
+              <h4 class="mt-2 font-medium">Up to 20+ minutes</h4>
+              <p class="mt-1 text-sm text-slate-600">Plenty of endurance for multiple takes and exteriors.</p>
+            </article>
           </div>
         </div>
 
-        <!-- MOBILE simple list -->
+        <!-- MOBILE: simple list -->
         <div class="mt-10 grid gap-3 lg:hidden">
           <details class="rounded-2xl bg-white p-5 ring-1 ring-black/5"><summary class="cursor-pointer font-medium">Advanced Obstacle Avoidance</summary><p class="mt-2 text-sm text-slate-600">Smart sensing to detect nearby objects for safer indoor flight.</p></details>
           <details class="rounded-2xl bg-white p-5 ring-1 ring-black/5"><summary class="cursor-pointer font-medium">Intelligent Flight Modes</summary><p class="mt-2 text-sm text-slate-600">Follow Me, Waypoints and more for effortless operation.</p></details>
-          <details class="rounded-2xl bg-white p-5 ring-1 ring-black/5"><summary class="cursor-pointer font-medium">Advanced Stabilization</summary><p class="mt-2 text-sm text-slate-600">Silky, steady footage with minimal micro-jitter.</p></details>
+          <details class="rounded-2xl bg-white p-5 ring-1 ring-black/5"><summary class="cursor-pointer font-medium">Advanced Stabilization</summary><p class="mt-2 text-sm text-slate-600">Silky, steady footage with minimal micro‑jitter.</p></details>
           <details class="rounded-2xl bg-white p-5 ring-1 ring-black/5"><summary class="cursor-pointer font-medium">Extended Flight Time</summary><p class="mt-2 text-sm text-slate-600">Up to 20+ minutes on a single charge.</p></details>
+        </div>
+
+        <div class="mt-8 text-center">
+          <h3 class="text-xl font-semibold">4K Ultra‑HD Camera</h3>
+          <p class="mt-1 text-slate-600">Capture stunning walkthroughs with incredible clarity.</p>
         </div>
 
         <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
           <a href="#work" class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white">View demos</a>
           <a href="#book" class="inline-flex items-center justify-center rounded-xl bg-emerald-400 px-5 py-3 text-sm font-semibold text-black">Book a flight</a>
         </div>
+
       </div>
     </section>
 
@@ -415,7 +427,6 @@
           <a class="group relative aspect-video overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10" href="#book"><div class="absolute inset-0 flex items-center justify-center text-white/60">Video Placeholder</div></a>
           <a class="group relative aspect-video overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10" href="#book"><div class="absolute inset-0 flex items-center justify-center text-white/60">Video Placeholder</div></a>
 
-                    <a class="group relative aspect-video overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10" href="#book"><div class="absolute inset-0 flex items-center justify-center text-white/60">Video Placeholder</div></a>
         </div>
       </div>
     </section>
@@ -519,214 +530,59 @@
       </div>
     </section>
 
-    <!-- PRICING REDESIGNED -->
-    <section class="pricing py-20" id="pricing">
-      <div class="mx-auto max-w-7xl px-5">
-        <div class="mb-16 text-center">
-          <p class="text-xs font-semibold tracking-widest text-white/60 uppercase">Investment</p>
-          <h2 class="mt-2 font-display text-3xl md:text-4xl font-semibold tracking-tight text-white">Simple, Transparent Pricing</h2>
-          <p class="mt-3 text-white/70 max-w-2xl mx-auto">Choose the package that fits your needs. All packages include fast turnaround and unlimited revisions.</p>
+  <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Choose the package that fits your needs. All packages include fast turnaround and unlimited revisions.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Essential</div>
+                    <div class="plan-price">$299</div>
+                    <ul class="plan-features">
+                        <li>2-3 minute FPV video</li>
+                        <li>10 high-res photos</li>
+                        <li>Basic editing & color correction</li>
+                        <li>48-hour delivery</li>
+                        <li>1 revision included</li>
+                    </ul>
+                    <a href="#booking" class="plan-cta">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="plan-name">Professional</div>
+                    <div class="plan-price">$499</div>
+                    <ul class="plan-features">
+                        <li>4-5 minute cinematic FPV video</li>
+                        <li>25 high-res photos</li>
+                        <li>3 social media reels</li>
+                        <li>Advanced editing & music</li>
+                        <li>24-hour delivery</li>
+                        <li>3 revisions included</li>
+                    </ul>
+                    <a href="#booking" class="plan-cta">Most Popular</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="plan-name">Premium</div>
+                    <div class="plan-price">$799</div>
+                    <ul class="plan-features">
+                        <li>6-8 minute signature FPV video</li>
+                        <li>50 high-res photos</li>
+                        <li>5 social media reels</li>
+                        <li>3D virtual tour</li>
+                        <li>Same-day delivery available</li>
+                        <li>Unlimited revisions</li>
+                    </ul>
+                    <a href="#booking" class="plan-cta">Go Premium</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 1.1rem; color: var(--gray-700);"><strong>Volume Discounts:</strong> 20% off 5+ properties | 30% off 10+ properties | Custom pricing for 20+ properties</p>
+            </div>
         </div>
-
-        <div class="grid gap-8 md:grid-cols-3">
-          <!-- Essential Package -->
-          <div class="relative bg-white/5 rounded-3xl p-8 ring-1 ring-white/10 hover:bg-white/10 transition-all duration-300">
-            <div class="mb-6">
-              <h3 class="text-xl font-semibold text-white mb-2">Essential</h3>
-              <div class="text-4xl font-bold text-white mb-1">$299</div>
-              <p class="text-white/60 text-sm">Perfect for individual listings</p>
-            </div>
-            
-            <div class="space-y-4 mb-8">
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white/80">2–3 minute FPV cinematic tour</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white/80">10 professional HDR photos</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white/80">Basic editing & color correction</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white/80">48-hour delivery</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white/80">1 revision included</span>
-              </div>
-            </div>
-            
-            <a href="#book" class="block w-full text-center bg-white/10 hover:bg-white/20 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300">
-              Get Started
-            </a>
-          </div>
-
-          <!-- Professional Package (Featured) -->
-          <div class="relative bg-accent/10 rounded-3xl p-8 ring-2 ring-accent scale-105 shadow-2xl">
-            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span class="bg-accent text-black px-6 py-2 rounded-full text-sm font-semibold">Most Popular</span>
-            </div>
-            
-            <div class="mb-6">
-              <h3 class="text-xl font-semibold text-white mb-2">Professional</h3>
-              <div class="text-4xl font-bold text-white mb-1">$499</div>
-              <p class="text-white/80 text-sm">Best value for agents</p>
-            </div>
-            
-            <div class="space-y-4 mb-8">
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white">4–5 minute cinematic FPV video</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white">25 high-resolution photos</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white">3 social media reels</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white">Advanced editing & licensed music</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white">24-hour delivery option</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white">3 revisions included</span>
-              </div>
-            </div>
-            
-            <a href="#book" class="block w-full text-center bg-accent hover:bg-accent/90 px-6 py-3 rounded-xl font-semibold text-black transition-all duration-300">
-              Get Started
-            </a>
-          </div>
-
-          <!-- Premium Package -->
-          <div class="relative bg-white/5 rounded-3xl p-8 ring-1 ring-white/10 hover:bg-white/10 transition-all duration-300">
-            <div class="mb-6">
-              <h3 class="text-xl font-semibold text-white mb-2">Premium</h3>
-              <div class="text-4xl font-bold text-white mb-1">$799</div>
-              <p class="text-white/60 text-sm">Complete marketing package</p>
-            </div>
-            
-            <div class="space-y-4 mb-8">
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white/80">6–8 minute signature FPV video</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white/80">50 high-resolution photos</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white/80">5 social media reels</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white/80">3D virtual tour (Matterport-style)</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white/80">Same-day delivery available</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-white/80">Unlimited revisions</span>
-              </div>
-            </div>
-            
-            <a href="#book" class="block w-full text-center bg-white/10 hover:bg-white/20 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300">
-              Get Started
-            </a>
-          </div>
-        </div>
-
-        <!-- Volume Discounts Section -->
-        <div class="mt-16 text-center">
-          <div class="bg-gradient-to-r from-accent/10 to-accent/5 rounded-2xl p-8 border border-accent/20">
-            <h3 class="text-xl font-semibold text-white mb-4">Volume Discounts Available</h3>
-            <div class="grid md:grid-cols-3 gap-6 text-sm">
-              <div class="flex items-center justify-center space-x-2">
-                <span class="text-accent font-bold">20% OFF</span>
-                <span class="text-white/70">5+ properties</span>
-              </div>
-              <div class="flex items-center justify-center space-x-2">
-                <span class="text-accent font-bold">30% OFF</span>
-                <span class="text-white/70">10+ properties</span>
-              </div>
-              <div class="flex items-center justify-center space-x-2">
-                <span class="text-accent font-bold">Custom Pricing</span>
-                <span class="text-white/70">20+ properties</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- FULL PRICING TABLE (collapsible) -->
-    <section id="full-pricing" class="py-2">
-      <div class="mx-auto max-w-7xl px-5">
-        <details class="group rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 open:bg-white/5">
-          <summary class="cursor-pointer list-none">
-            <div class="flex items-center justify-between">
-              <h3 class="text-lg font-medium">Example Package Pricing (per property)</h3>
-              <span class="text-sm text-white/60 group-open:hidden">Expand</span>
-              <span class="hidden text-sm text-white/60 group-open:inline">Collapse</span>
-            </div>
-          </summary>
-          <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4 text-sm text-white/80">
-            <div class="rounded-xl bg-surface p-5 ring-1 ring-white/5"><div class="font-medium">FPV YouTube Tour Only</div><p class="mt-2">3–5: $250 · 5–10: $225 · 10–15: $200 · 15+: $175</p></div>
-            <div class="rounded-xl bg-surface p-5 ring-1 ring-white/5"><div class="font-medium">FPV + Social Media</div><p class="mt-2">3–5: $325 · 5–10: $300 · 10–15: $275 · 15+: $225</p></div>
-            <div class="rounded-xl bg-surface p-5 ring-1 ring-white/5"><div class="font-medium">FPV + Photos</div><p class="mt-2">3–5: $400 · 5–10: $375 · 10–15: $350 · 15+: $325</p></div>
-            <div class="rounded-xl bg-surface p-5 ring-1 ring-white/5"><div class="font-medium">Full Package (FPV + Social + Photos + 3D)</div><p class="mt-2">3–5: ~$625 · 5–10: ~$600 · 10–15: ~$575 · 15+: ~$550</p></div>
-          </div>
-        </details>
-      </div>
-    </section>
 
     <!-- TESTIMONIALS -->
     <section class="py-20">
