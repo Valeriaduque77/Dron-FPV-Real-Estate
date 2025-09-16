@@ -125,45 +125,58 @@
       </div>
     </header>
 
-    <!-- HERO -->
-    <section id="home" class="relative isolate pt-36">
-  <div class="mx-auto max-w-7xl px-5">
-    <!-- Card con imagen (no fondo). Márgenes mínimos y flecha dentro del card, como la referencia -->
-    <div class="relative overflow-hidden rounded-[28px] bg-white ring-1 ring-black/5 shadow-xl">
-      <div class="relative">
-        <!-- Imagen de portada DJI AVATA (como la referencia) -->
-        <img src="https://i.ytimg.com/vi/QSlegMdpjpc/maxresdefault.jpg" alt="DJI Avata hero" class="block w-full select-none" />
+  <!-- HERO full-bleed (ocupa el ancho completo de la ventana) -->
+<section id="home" class="relative pt-28">
+  <!-- Wrapper full-bleed: rompe el max-width del layout y usa el ancho total de la ventana -->
+  <div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
+    <!-- Marco blanco MUY fino alrededor de la imagen -->
+    <div class="relative mx-auto bg-white p-1 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,.35)] overflow-visible">
+      <!-- Media SIN márgenes internos -->
+      <div class="relative overflow-hidden rounded-xl">
+        <img
+          src="https://i.ytimg.com/vi/QSlegMdpjpc/maxresdefault.jpg"
+          alt="DJI Avata - Real estate FPV"
+          class="block w-full h-[56vh] md:h-[72vh] object-cover"
+        />
 
-        <!-- Título grande reemplazando MAVEC 2 PRO -->
-        <h1 class="pointer-events-none select-none absolute inset-x-0 top-6 text-center font-display leading-none tracking-tight uppercase text-white drop-shadow-[0_2px_10px_rgba(0,0,0,.45)]"
-            style="font-size:clamp(42px,10vw,128px); letter-spacing:-0.02em;">
-          Real Estate Videos
+        <!-- Título sobre la imagen -->
+        <h1 class="absolute left-4 sm:left-6 top-4 sm:top-6 font-display text-[38px] sm:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-tight text-white drop-shadow-[0_6px_30px_rgba(0,0,0,.65)]">
+          REAL ESTATE VIDEOS
         </h1>
 
-        <!-- Botón principal sobre la imagen -->
-        <a href="#book" class="absolute left-1/2 -translate-x-1/2 bottom-8 inline-flex items-center justify-center rounded-full bg-emerald-400 px-6 py-3 font-semibold text-black shadow hover:shadow-md">Book a flight</a>
+        <!-- Botón centrado sobre la imagen -->
+        <a href="#book"
+           class="absolute bottom-5 left-1/2 -translate-x-1/2 inline-flex items-center justify-center rounded-xl bg-emerald-400 px-5 py-3 text-sm font-semibold text-black shadow-lg hover:shadow-xl">
+          Book a flight
+        </a>
       </div>
 
-      <!-- Flecha dentro del card con margen mínimo -->
-      <div class="grid place-items-center py-2">
-        <svg class="h-6 w-6 text-slate-700/70" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <!-- Flecha: FUERA del marco (debajo del borde blanco) -->
+      <button
+        aria-label="Scroll"
+        onclick="document.getElementById('hero-after').scrollIntoView({behavior:'smooth'})"
+        class="absolute -bottom-6 left-1/2 -translate-x-1/2 grid h-10 w-10 place-items-center rounded-full bg-white ring-1 ring-black/10 shadow-[0_6px_20px_rgba(0,0,0,.2)]">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
           <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-      </div>
+      </button>
     </div>
+  </div>
 
-    <!-- Todo el texto que iba antes debajo del título, ahora VA DEBAJO de la flecha (fuera del card) -->
-    <div id="hero-more" class="mx-auto mt-6 max-w-3xl text-center">
-      <p class="text-lg text-white/80">FPV cinematic walkthroughs inside and out, aerials, photos, reels, and 3D — professionally edited and delivered in 48–72 hours.</p>
-      <div class="mt-6 grid grid-cols-2 gap-3 text-sm text-white/70 sm:grid-cols-4">
-        <div class="rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10">Delivery 48–72h</div>
-        <div class="rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10">Licensed pilots</div>
-        <div class="rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10">Insured</div>
-        <div class="rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10">Multi‑city coverage</div>
-      </div>
+  <!-- CONTENIDO que iba antes debajo del título: va AQUÍ, bajo la flecha -->
+  <div id="hero-after" class="mt-14 text-center px-5">
+    <p class="mx-auto max-w-3xl text-white/80">
+      FPV cinematic walkthroughs inside and out, aerials, photos, reels, and 3D — professionally edited and delivered in 48–72 hours.
+    </p>
+    <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto text-sm">
+      <div class="rounded-xl bg-white/10 px-4 py-2 ring-1 ring-white/15 text-white/80">Delivery 48–72h</div>
+      <div class="rounded-xl bg-white/10 px-4 py-2 ring-1 ring-white/15 text-white/80">Licensed pilots</div>
+      <div class="rounded-xl bg-white/10 px-4 py-2 ring-1 ring-white/15 text-white/80">Insured</div>
+      <div class="rounded-xl bg-white/10 px-4 py-2 ring-1 ring-white/15 text-white/80">Multi-city coverage</div>
     </div>
   </div>
 </section>
+
 
     <!-- AVATA (DJI) -->
     <section id="avata" class="relative bg-[#F7F8FA] text-slate-900">
