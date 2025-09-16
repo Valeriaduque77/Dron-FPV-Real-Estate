@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cinematic Realty Media — Real Estate FPV & Media</title>
-    <meta name="description" content="FPV cinematic real estate tours, aerials, photos, reels, and 3D for agents and developers. Fast delivery, professional editing, multi‑city coverage." />
+    <meta name="description" content="FPV cinematic real estate tours, aerials, photos, reels, and 3D for agents and developers. Fast delivery, professional editing, multi-city coverage." />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,50 +41,13 @@
       html, body { height: 100%; }
       .glass { backdrop-filter: saturate(140%) blur(10px); }
 
-      /* ===== Avata stage sizing & vertical centering ===== */
-      :root { --avataH: clamp(14rem, 25vw, 20rem); }
-      .avata-stage { min-height: var(--avataH); }
-      .avata-circle { width: var(--avataH); height: var(--avataH); }
-      .avata-side { min-height: var(--avataH); display: flex; align-items: center; }
-
-      /* Avata cards (compact overlapped rows, equal size) */
-      .stack-line { gap: 0; }
-      .stack-line .stack-card {
-        margin-left: -2.5rem; /* overlap */
-        transition: transform .28s ease, opacity .28s ease, filter .28s ease, box-shadow .28s ease;
-        display: flex; flex-direction: column; justify-content: center; /* center content vertically */
-        height:18rem; /* SAME height for all 6 cards */
-      }
-      .stack-line .stack-card:first-child { margin-left: 0; }
-      .stack-card.d1 { z-index: 10; transform: translateY(8px) scale(.98); filter: blur(.25px); opacity: .92; }
-      .stack-card.d2 { z-index: 20; transform: translateY(4px) scale(.99); filter: blur(.15px); opacity: .96; }
-      .stack-card.d3 { z-index: 30; transform: translateY(0) scale(1); filter: none; opacity: 1; }
-      .stack-card:hover { z-index: 60; transform: translateY(-6px) scale(1.04); filter: none; opacity: 1; box-shadow: 0 16px 40px rgba(2,6,23,.14); }
-      /* ===== Custom Pricing Styles ===== */
-  :root{
-    --primary:#10b981; /* emerald-500 */
-    --primary-dark:#059669; /* emerald-600 */
-    --secondary:#ff6a3d;
-    --dark:#0f1117;
-    --gray-700:#475569;
-    --shadow:0 10px 30px rgba(0,0,0,.15);
-    --shadow-lg:0 20px 60px rgba(0,0,0,.22);
-  }
-  .pricing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-  @media (max-width: 960px){.pricing-grid{grid-template-columns:1fr;}}
-  .pricing-card{background:#fff;border-radius:20px;padding:40px;text-align:center;box-shadow:var(--shadow);transition:all .3s ease;position:relative}
-  .pricing-card.featured{border:2px solid var(--primary);transform:scale(1.05)}
-  .pricing-card.featured::before{content:"Most Popular";position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;padding:8px 20px;border-radius:20px;font-size:.8rem;font-weight:600}
-  .pricing-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
-  .pricing-card.featured:hover{transform:scale(1.05) translateY(-5px)}
-  .plan-name{font-size:1.4rem;font-weight:700;margin-bottom:10px;color:var(--dark)}
-  .plan-price{font-size:3rem;font-weight:800;color:var(--primary);margin-bottom:20px}
-  .plan-features{list-style:none;margin-bottom:30px;padding-left:0}
-  .plan-features li{padding:8px 0;color:var(--gray-700)}
-  .plan-features li::before{content:"✓";color:var(--primary);font-weight:700;margin-right:10px}
-  .plan-cta{background:var(--primary);color:#fff;padding:15px 30px;border-radius:50px;text-decoration:none;font-weight:600;transition:all .3s ease;display:inline-block}
-  .plan-cta:hover{background:var(--primary-dark);transform:translateY(-2px)}
-</style>
+      /* Avata interactive cards */
+      .avata-card { position: relative; }
+      .avata-card .overlay { opacity: 0; transform: translateY(6px); transition: opacity .35s ease, transform .35s ease; }
+      .avata-card:hover .overlay, .avata-card[aria-expanded="true"] .overlay { opacity: 1; transform: translateY(0); }
+      .stack-layer { transition: transform .35s ease, opacity .35s ease, filter .35s ease; }
+      .stack-layer:hover { filter: none; opacity: 1; transform: translateX(0) translateY(0) scale(1); }
+    </style>
   </head>
   <body class="bg-obsidian text-ink font-sans antialiased">
     <!-- NAV -->
@@ -125,58 +88,58 @@
       </div>
     </header>
 
-  <!-- HERO full-bleed (ocupa el ancho completo de la ventana) -->
-<section id="home" class="relative pt-28">
-  <!-- Wrapper full-bleed: rompe el max-width del layout y usa el ancho total de la ventana -->
-  <div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
-    <!-- Marco blanco MUY fino alrededor de la imagen -->
-    <div class="relative mx-auto bg-white p-1 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,.35)] overflow-visible">
-      <!-- Media SIN márgenes internos -->
-      <div class="relative overflow-hidden rounded-xl">
-        <img
-          src="https://i.ytimg.com/vi/QSlegMdpjpc/maxresdefault.jpg"
-          alt="DJI Avata - Real estate FPV"
-          class="block w-full h-[56vh] md:h-[72vh] object-cover"
-        />
+    <!-- HERO full-bleed con marco negro y franja blanca abajo -->
+    <section id="home" class="relative pt-28">
+      <!-- full-bleed wrapper -->
+      <div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
+        <!-- Marco NEGRO fino -->
+        <div class="relative mx-auto bg-black p-1 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,.45)] overflow-visible">
+          <!-- Media -->
+          <div class="relative overflow-hidden rounded-xl">
+            <img
+              src="https://i.ytimg.com/vi/QSlegMdpjpc/maxresdefault.jpg"
+              alt="DJI Avata - Real estate FPV"
+              class="block w-full h-[56vh] md:h-[72vh] object-cover object-[50%_20%]"
+            />
 
-        <!-- Título sobre la imagen -->
-        <h1 class="absolute left-4 sm:left-6 top-4 sm:top-6 font-display text-[38px] sm:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-tight text-white drop-shadow-[0_6px_30px_rgba(0,0,0,.65)]">
-          REAL ESTATE VIDEOS
-        </h1>
+            <!-- Título debajo del dron (centrado) -->
+            <h1 class="pointer-events-none absolute left-1/2 top-[56%] -translate-x-1/2 font-display text-[40px] sm:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-tight text-white drop-shadow-[0_8px_30px_rgba(0,0,0,.7)]">
+              REAL ESTATE VIDEOS
+            </h1>
 
-        <!-- Botón centrado sobre la imagen -->
-        <a href="#book"
-           class="absolute bottom-5 left-1/2 -translate-x-1/2 inline-flex items-center justify-center rounded-xl bg-emerald-400 px-5 py-3 text-sm font-semibold text-black shadow-lg hover:shadow-xl">
-          Book a flight
-        </a>
+            <!-- Botón centrado sobre la imagen -->
+            <a href="#book"
+               class="absolute bottom-5 left-1/2 -translate-x-1/2 inline-flex items-center justify-center rounded-xl bg-emerald-400 px-5 py-3 text-sm font-semibold text-black shadow-lg hover:shadow-xl">
+              Book a flight
+            </a>
+          </div>
+
+          <!-- Flecha: fuera del marco (debajo) -->
+          <button
+            aria-label="Scroll"
+            onclick="document.getElementById('hero-after').scrollIntoView({behavior:'smooth'})"
+            class="absolute -bottom-6 left-1/2 -translate-x-1/2 grid h-10 w-10 place-items-center rounded-full bg-white ring-1 ring-black/10 shadow-[0_6px_20px_rgba(0,0,0,.25)]">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
       </div>
 
-      <!-- Flecha: FUERA del marco (debajo del borde blanco) -->
-      <button
-        aria-label="Scroll"
-        onclick="document.getElementById('hero-after').scrollIntoView({behavior:'smooth'})"
-        class="absolute -bottom-6 left-1/2 -translate-x-1/2 grid h-10 w-10 place-items-center rounded-full bg-white ring-1 ring-black/10 shadow-[0_6px_20px_rgba(0,0,0,.2)]">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- CONTENIDO que iba antes debajo del título: va AQUÍ, bajo la flecha -->
-  <div id="hero-after" class="mt-14 text-center px-5">
-    <p class="mx-auto max-w-3xl text-white/80">
-      FPV cinematic walkthroughs inside and out, aerials, photos, reels, and 3D — professionally edited and delivered in 48–72 hours.
-    </p>
-    <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto text-sm">
-      <div class="rounded-xl bg-white/10 px-4 py-2 ring-1 ring-white/15 text-white/80">Delivery 48–72h</div>
-      <div class="rounded-xl bg-white/10 px-4 py-2 ring-1 ring-white/15 text-white/80">Licensed pilots</div>
-      <div class="rounded-xl bg-white/10 px-4 py-2 ring-1 ring-white/15 text-white/80">Insured</div>
-      <div class="rounded-xl bg-white/10 px-4 py-2 ring-1 ring-white/15 text-white/80">Multi-city coverage</div>
-    </div>
-  </div>
-</section>
-
+      <!-- Franja BLANCA con el texto y chips -->
+      <div id="hero-after" class="mx-auto mt-14 max-w-5xl rounded-2xl bg-white px-6 py-8 text-center shadow-[0_12px_30px_rgba(0,0,0,.25)]">
+        <p class="mx-auto max-w-3xl text-slate-800">
+          FPV cinematic walkthroughs inside and out, aerials, photos, reels, and 3D — professionally edited
+          and delivered in 48–72 hours.
+        </p>
+        <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto text-sm">
+          <div class="rounded-xl bg-slate-100 px-4 py-2 ring-1 ring-slate-200 text-slate-700">Delivery 48–72h</div>
+          <div class="rounded-xl bg-slate-100 px-4 py-2 ring-1 ring-slate-200 text-slate-700">Licensed pilots</div>
+          <div class="rounded-xl bg-slate-100 px-4 py-2 ring-1 ring-slate-200 text-slate-700">Insured</div>
+          <div class="rounded-xl bg-slate-100 px-4 py-2 ring-1 ring-slate-200 text-slate-700">Multi-city coverage</div>
+        </div>
+      </div>
+    </section>
 
     <!-- AVATA (DJI) -->
     <section id="avata" class="relative bg-[#F7F8FA] text-slate-900">
@@ -184,97 +147,85 @@
         <header class="mb-12 text-center">
           <p class="text-xs font-semibold tracking-widest text-slate-500 uppercase">Equipment</p>
           <h2 class="mt-2 font-display text-3xl md:text-4xl font-semibold tracking-tight">DJI Avata for Real Estate</h2>
-          <p class="mt-3 max-w-3xl mx-auto text-slate-600">Our primary FPV cinewhoop. Ducted prop guards and agile control enable safe indoor flights, fluid transitions and one‑take storytelling across exterior and interior spaces.</p>
+          <p class="mt-3 max-w-3xl mx-auto text-slate-600">Our primary FPV cinewhoop. Ducted prop guards and agile control enable safe indoor flights, fluid transitions and one-take storytelling across exterior and interior spaces.</p>
         </header>
 
-        <!-- LEFT · CENTER · RIGHT -->
-        <div class="avata-stage grid items-center gap-8 lg:grid-cols-3 xl:grid-cols-[1.1fr_1.4fr_1.1fr]">
-
-          <!-- LEFT STACK (01 deepest ← 03 front near circle) -->
-          <div class="avata-side hidden lg:flex items-center justify-end stack-line pr-6 xl:pr-8">
-            <article class="stack-card d1 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
-              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
-                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">01</span>
-                <span class="uppercase">Advanced Obstacle Avoidance</span>
+        <!-- Layout: tarjetas laterales + círculo central -->
+        <div class="grid items-center gap-8 lg:grid-cols-3">
+          <!-- LEFT STACK -->
+          <div class="relative hidden lg:block h-[420px]">
+            <div class="stack-layer avata-card absolute left-0 top-0 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md cursor-pointer" aria-expanded="false">
+              <div class="relative z-[1]">
+                <div class="flex items-center gap-2 text-slate-400 text-xs">
+                  <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">01</span>
+                  <span class="uppercase tracking-wide">Advanced Obstacle Avoidance</span>
+                </div>
+                <h4 class="mt-2 font-medium">Fly safely with smart sensors</h4>
+                <p class="mt-2 text-sm text-slate-600">Onboard sensing helps detect nearby objects, supporting safer paths.</p>
               </div>
-              <h4 class="mt-2 font-medium">Fly safely with smart sensors</h4>
-              <p class="mt-1 text-sm text-slate-600">Onboard sensing helps detect nearby objects for safer paths through doors and tight corners.</p>
-            </article>
-            <article class="stack-card d2 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
-              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
-                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">02</span>
-                <span class="uppercase">Precision Control</span>
-              </div>
-              <h4 class="mt-2 font-medium">Agile motion in tight spaces</h4>
-              <p class="mt-1 text-sm text-slate-600">Confident moves around furniture for elegant reveals and transitions.</p>
-            </article>
-            <article class="stack-card d3 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
-              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
-                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">03</span>
-                <span class="uppercase">Advanced Stabilization</span>
-              </div>
-              <h4 class="mt-2 font-medium">Silky, steady footage</h4>
-              <p class="mt-1 text-sm text-slate-600">Cinematic motion with minimal micro‑jitter for clean editing.</p>
-            </article>
+            </div>
+            <div class="stack-layer absolute left-6 top-24 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md opacity-80 blur-[0.3px] scale-[0.98]">
+              <div class="flex items-center gap-2 text-slate-400 text-xs"><span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">02</span><span class="uppercase tracking-wide">Precision Control</span></div>
+              <h4 class="mt-2 font-medium text-slate-600">Agile motion in tight spaces</h4>
+              <p class="mt-2 text-sm text-slate-500">Confident moves around furniture for elegant reveals.</p>
+            </div>
+            <div class="stack-layer absolute left-12 top-44 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md opacity-60 blur-[0.6px] scale-[0.96]">
+              <div class="flex items-center gap-2 text-slate-400 text-xs"><span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">03</span><span class="uppercase tracking-wide">Advanced Stabilization</span></div>
+              <h4 class="mt-2 font-medium text-slate-600">Silky, steady footage</h4>
+              <p class="mt-2 text-sm text-slate-500">Minimal micro-jitter for clean editing.</p>
+            </div>
           </div>
 
-          <!-- CENTER CIRCLE (image restored) -->
-          <div class="relative mx-auto w-full max-w-[48rem] xl:max-w-[60rem]">
-            <div class="relative avata-circle aspect-square rounded-full bg-white ring-1 ring-black/5 shadow-xl flex items-center justify-center overflow-hidden">
+          <!-- CENTER CIRCLE -->
+          <div class="relative mx-auto w-full max-w-xl">
+            <div class="relative aspect-square rounded-full bg-white ring-1 ring-black/5 shadow-xl flex items-center justify-center overflow-hidden">
               <div class="absolute inset-0 rounded-full border border-slate-200"></div>
               <div class="absolute inset-6 rounded-full border border-slate-100"></div>
-              <img src="https://se-cdn.djiits.com/tpc/uploads/spu/cover/daf2c8fd679eb886c0ba45a1d015a5fc@xlarge.png" alt="DJI Avata FPV drone" class="relative z-[1] w-[98%] max-w-none drop-shadow-xl pointer-events-none select-none" />
+              <img src="https://se-cdn.djiits.com/tpc/uploads/spu/cover/daf2c8fd679eb886c0ba45a1d015a5fc@xlarge.png" alt="DJI Avata FPV drone" class="relative z-[1] w-4/5 max-w-md drop-shadow-xl pointer-events-none select-none" />
             </div>
-            
+            <div class="mt-6 text-center">
+              <h3 class="text-xl font-semibold">4K Ultra-HD Camera</h3>
+              <p class="mt-1 text-slate-600">Capture stunning walkthroughs with incredible clarity.</p>
+            </div>
           </div>
 
-          <!-- RIGHT STACK (02 front near circle → 04 deepest) -->
-          <div class="avata-side hidden lg:flex items-center justify-start stack-line pl-6 xl:pl-8">
-            <article class="stack-card d3 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
-              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
-                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">02</span>
-                <span class="uppercase">Intelligent Flight Modes</span>
+          <!-- RIGHT STACK -->
+          <div class="relative hidden lg:block h-[420px]">
+            <div class="stack-layer avata-card absolute right-0 top-0 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md cursor-pointer" aria-expanded="false">
+              <div class="relative z-[1]">
+                <div class="flex items-center gap-2 text-slate-400 text-xs">
+                  <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">02</span>
+                  <span class="uppercase tracking-wide">Intelligent Flight Modes</span>
+                </div>
+                <h4 class="mt-2 font-medium">Follow, Waypoints, and more</h4>
+                <p class="mt-2 text-sm text-slate-600">Automated aids that keep moves smooth and repeatable.</p>
               </div>
-              <h4 class="mt-2 font-medium">Follow, Waypoints, and more</h4>
-              <p class="mt-1 text-sm text-slate-600">Automated aids that keep moves smooth and repeatable.</p>
-            </article>
-            <article class="stack-card d2 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
-              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
-                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">03</span>
-                <span class="uppercase">4K Recording</span>
-              </div>
-              <h4 class="mt-2 font-medium">High‑detail image</h4>
-              <p class="mt-1 text-sm text-slate-600">Sharp picture and consistent color for YouTube, MLS and ads.</p>
-            </article>
-            <article class="stack-card d1 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
-              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
-                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">04</span>
-                <span class="uppercase">Extended Flight Time</span>
-              </div>
-              <h4 class="mt-2 font-medium">Up to 20+ minutes</h4>
-              <p class="mt-1 text-sm text-slate-600">Plenty of endurance for multiple takes and exteriors.</p>
-            </article>
+            </div>
+            <div class="stack-layer absolute right-6 top-24 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md opacity-80 blur-[0.3px] scale-[0.98]">
+              <div class="flex items-center gap-2 text-slate-400 text-xs"><span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">03</span><span class="uppercase tracking-wide">4K Recording</span></div>
+              <h4 class="mt-2 font-medium text-slate-600">High-detail image</h4>
+              <p class="mt-2 text-sm text-slate-500">Consistent color for YouTube, MLS and ads.</p>
+            </div>
+            <div class="stack-layer absolute right-12 top-44 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md opacity-60 blur-[0.6px] scale-[0.96]">
+              <div class="flex items-center gap-2 text-slate-400 text-xs"><span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">04</span><span class="uppercase tracking-wide">Extended Flight Time</span></div>
+              <h4 class="mt-2 font-medium text-slate-600">Up to 20+ minutes</h4>
+              <p class="mt-2 text-sm text-slate-500">Plenty of endurance for multiple takes and exteriors.</p>
+            </div>
           </div>
         </div>
 
-        <!-- MOBILE: simple list -->
+        <!-- MOBILE simple list -->
         <div class="mt-10 grid gap-3 lg:hidden">
           <details class="rounded-2xl bg-white p-5 ring-1 ring-black/5"><summary class="cursor-pointer font-medium">Advanced Obstacle Avoidance</summary><p class="mt-2 text-sm text-slate-600">Smart sensing to detect nearby objects for safer indoor flight.</p></details>
           <details class="rounded-2xl bg-white p-5 ring-1 ring-black/5"><summary class="cursor-pointer font-medium">Intelligent Flight Modes</summary><p class="mt-2 text-sm text-slate-600">Follow Me, Waypoints and more for effortless operation.</p></details>
-          <details class="rounded-2xl bg-white p-5 ring-1 ring-black/5"><summary class="cursor-pointer font-medium">Advanced Stabilization</summary><p class="mt-2 text-sm text-slate-600">Silky, steady footage with minimal micro‑jitter.</p></details>
+          <details class="rounded-2xl bg-white p-5 ring-1 ring-black/5"><summary class="cursor-pointer font-medium">Advanced Stabilization</summary><p class="mt-2 text-sm text-slate-600">Silky, steady footage with minimal micro-jitter.</p></details>
           <details class="rounded-2xl bg-white p-5 ring-1 ring-black/5"><summary class="cursor-pointer font-medium">Extended Flight Time</summary><p class="mt-2 text-sm text-slate-600">Up to 20+ minutes on a single charge.</p></details>
-        </div>
-
-        <div class="mt-8 text-center">
-          <h3 class="text-xl font-semibold">4K Ultra‑HD Camera</h3>
-          <p class="mt-1 text-slate-600">Capture stunning walkthroughs with incredible clarity.</p>
         </div>
 
         <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
           <a href="#work" class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white">View demos</a>
           <a href="#book" class="inline-flex items-center justify-center rounded-xl bg-emerald-400 px-5 py-3 text-sm font-semibold text-black">Book a flight</a>
         </div>
-
       </div>
     </section>
 
