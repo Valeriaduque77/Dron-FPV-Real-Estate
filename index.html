@@ -88,58 +88,65 @@
       </div>
     </header>
 
-    <!-- HERO full-bleed con marco negro y franja blanca abajo -->
-    <section id="home" class="relative pt-28">
-      <!-- full-bleed wrapper -->
-      <div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
-        <!-- Marco NEGRO fino -->
-        <div class="relative mx-auto bg-black p-1 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,.45)] overflow-visible">
-          <!-- Media -->
-          <div class="relative overflow-hidden rounded-xl">
-            <img
-              src="https://i.ytimg.com/vi/QSlegMdpjpc/maxresdefault.jpg"
-              alt="DJI Avata - Real estate FPV"
-              class="block w-full h-[56vh] md:h-[72vh] object-cover object-[50%_20%]"
-            />
+<!-- HERO full-bleed con marco negro y franja blanca abajo -->
+<section id="home" class="relative pt-28">
+  <!-- full-bleed wrapper -->
+  <div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
+    <!-- Marco NEGRO con más margen lateral e inferior -->
+    <div class="relative mx-auto bg-black px-2 md:px-3 pb-2 pt-1 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,.45)] overflow-visible">
+      <!-- Media -->
+      <div class="relative overflow-hidden rounded-xl">
+        <img
+          src="https://i.ytimg.com/vi/QSlegMdpjpc/maxresdefault.jpg"
+          alt="DJI Avata - Real estate FPV"
+          class="block w-full h-[56vh] md:h-[72vh] object-cover object-[50%_20%]" />
+        
+        <!-- Título CENTRADO debajo del dron -->
+        <h1
+          class="pointer-events-none absolute left-1/2 top-[58%] -translate-x-1/2 -translate-y-1/2
+                 w-full px-6 text-center font-display
+                 text-[40px] leading-[1.05] sm:text-6xl lg:text-7xl xl:text-8xl
+                 font-semibold tracking-tight text-white drop-shadow-[0_8px_30px_rgba(0,0,0,.7)]">
+          REAL ESTATE VIDEOS
+        </h1>
 
-            <!-- Título debajo del dron (centrado) -->
-            <h1 class="pointer-events-none absolute left-1/2 top-[56%] -translate-x-1/2 font-display text-[40px] sm:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-tight text-white drop-shadow-[0_8px_30px_rgba(0,0,0,.7)]">
-              REAL ESTATE VIDEOS
-            </h1>
-
-            <!-- Botón centrado sobre la imagen -->
-            <a href="#book"
-               class="absolute bottom-5 left-1/2 -translate-x-1/2 inline-flex items-center justify-center rounded-xl bg-emerald-400 px-5 py-3 text-sm font-semibold text-black shadow-lg hover:shadow-xl">
-              Book a flight
-            </a>
-          </div>
-
-          <!-- Flecha: fuera del marco (debajo) -->
-          <button
-            aria-label="Scroll"
-            onclick="document.getElementById('hero-after').scrollIntoView({behavior:'smooth'})"
-            class="absolute -bottom-6 left-1/2 -translate-x-1/2 grid h-10 w-10 place-items-center rounded-full bg-white ring-1 ring-black/10 shadow-[0_6px_20px_rgba(0,0,0,.25)]">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
+        <!-- Botón centrado (texto BLANCO) -->
+        <a href="#book"
+           class="absolute bottom-5 left-1/2 -translate-x-1/2 inline-flex items-center justify-center
+                  rounded-xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-white
+                  shadow-lg hover:shadow-xl hover:bg-emerald-600 transition">
+          Book a flight
+        </a>
       </div>
 
-      <!-- Franja BLANCA con el texto y chips -->
-      <div id="hero-after" class="mx-auto mt-14 max-w-5xl rounded-2xl bg-white px-6 py-8 text-center shadow-[0_12px_30px_rgba(0,0,0,.25)]">
-        <p class="mx-auto max-w-3xl text-slate-800">
-          FPV cinematic walkthroughs inside and out, aerials, photos, reels, and 3D — professionally edited
-          and delivered in 48–72 hours.
-        </p>
-        <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto text-sm">
-          <div class="rounded-xl bg-slate-100 px-4 py-2 ring-1 ring-slate-200 text-slate-700">Delivery 48–72h</div>
-          <div class="rounded-xl bg-slate-100 px-4 py-2 ring-1 ring-slate-200 text-slate-700">Licensed pilots</div>
-          <div class="rounded-xl bg-slate-100 px-4 py-2 ring-1 ring-slate-200 text-slate-700">Insured</div>
-          <div class="rounded-xl bg-slate-100 px-4 py-2 ring-1 ring-slate-200 text-slate-700">Multi-city coverage</div>
-        </div>
-      </div>
-    </section>
+      <!-- Flecha: marco negro “abrazando” la flecha -->
+      <button
+        aria-label="Scroll"
+        onclick="document.getElementById('hero-after').scrollIntoView({behavior:'smooth'})"
+        class="absolute -bottom-4 left-1/2 -translate-x-1/2 grid h-10 w-10 place-items-center
+               rounded-full bg-white ring-1 ring-black/10 shadow-[0_6px_20px_rgba(0,0,0,.25)]">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Franja BLANCA con texto y chips (sigue igual) -->
+  <div id="hero-after" class="mx-auto mt-14 max-w-5xl rounded-2xl bg-white px-6 py-8 text-center shadow-[0_12px_30px_rgba(0,0,0,.25)]">
+    <p class="mx-auto max-w-3xl text-slate-800">
+      FPV cinematic walkthroughs inside and out, aerials, photos, reels, and 3D — professionally edited
+      and delivered in 48–72 hours.
+    </p>
+    <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto text-sm">
+      <div class="rounded-xl bg-slate-100 px-4 py-2 ring-1 ring-slate-200 text-slate-700">Delivery 48–72h</div>
+      <div class="rounded-xl bg-slate-100 px-4 py-2 ring-1 ring-slate-200 text-slate-700">Licensed pilots</div>
+      <div class="rounded-xl bg-slate-100 px-4 py-2 ring-1 ring-slate-200 text-slate-700">Insured</div>
+      <div class="rounded-xl bg-slate-100 px-4 py-2 ring-1 ring-slate-200 text-slate-700">Multi-city coverage</div>
+    </div>
+  </div>
+</section>
+
 
     <!-- AVATA (DJI) -->
     <section id="avata" class="relative bg-[#F7F8FA] text-slate-900">
