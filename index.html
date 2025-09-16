@@ -252,10 +252,8 @@
             <!-- Scroll Indicator -->
             <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
                 <div class="flex flex-col items-center space-y-2 text-white/60">
-                    <span class="text-sm">Scroll to explore</span>
                     <div class="w-px h-16 bg-gradient-to-b from-accent to-transparent"></div>
                     <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-                        <div class="w-1 h-3 bg-accent rounded-full mt-2 animate-bounce"></div>
                     </div>
                 </div>
             </div>
@@ -263,106 +261,94 @@
     </div>
 </section>
 
-     <!-- AVATA (DJI) -->
+    <!-- AVATA (DJI) -->
     <section id="avata" class="relative bg-[#F7F8FA] text-slate-900">
       <div class="mx-auto max-w-7xl px-5 py-20">
         <header class="mb-12 text-center">
           <p class="text-xs font-semibold tracking-widest text-slate-500 uppercase">Equipment</p>
           <h2 class="mt-2 font-display text-3xl md:text-4xl font-semibold tracking-tight">DJI Avata for Real Estate</h2>
-          <p class="mt-3 max-w-3xl mx-auto text-slate-600">Our primary FPV cinewhoop. Ducted prop guards and agile control enable safe indoor flights, fluid transitions and one‑take storytelling across exterior and interior spaces.</p>
+          <p class="mt-3 max-w-3xl mx-auto text-slate-600">Our primary FPV cinewhoop. Ducted prop guards and agile control enable safe indoor flights, fluid transitions and one-take storytelling across exterior and interior spaces.</p>
         </header>
 
-        <!-- LEFT · CENTER · RIGHT -->
-        <div class="avata-stage grid items-center gap-8 lg:grid-cols-3 xl:grid-cols-[1.1fr_1.4fr_1.1fr]">
-
-          <!-- LEFT STACK (01 deepest ← 03 front near circle) -->
-          <div class="avata-side hidden lg:flex items-center justify-end stack-line pr-6 xl:pr-8">
-            <article class="stack-card d1 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
-              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
-                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">01</span>
-                <span class="uppercase">Advanced Obstacle Avoidance</span>
+        <!-- Layout: tarjetas laterales + círculo central -->
+        <div class="grid items-center gap-8 lg:grid-cols-3">
+          <!-- LEFT STACK -->
+          <div class="relative hidden lg:block h-[420px]">
+            <div class="stack-layer avata-card absolute left-0 top-0 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md cursor-pointer" aria-expanded="false">
+              <div class="relative z-[1]">
+                <div class="flex items-center gap-2 text-slate-400 text-xs">
+                  <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">01</span>
+                  <span class="uppercase tracking-wide">Advanced Obstacle Avoidance</span>
+                </div>
+                <h4 class="mt-2 font-medium">Fly safely with smart sensors</h4>
+                <p class="mt-2 text-sm text-slate-600">Onboard sensing helps detect nearby objects, supporting safer paths.</p>
               </div>
-              <h4 class="mt-2 font-medium">Fly safely with smart sensors</h4>
-              <p class="mt-1 text-sm text-slate-600">Onboard sensing helps detect nearby objects for safer paths through doors and tight corners.</p>
-            </article>
-            <article class="stack-card d2 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
-              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
-                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">02</span>
-                <span class="uppercase">Precision Control</span>
-              </div>
-              <h4 class="mt-2 font-medium">Agile motion in tight spaces</h4>
-              <p class="mt-1 text-sm text-slate-600">Confident moves around furniture for elegant reveals and transitions.</p>
-            </article>
-            <article class="stack-card d3 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
-              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
-                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">03</span>
-                <span class="uppercase">Advanced Stabilization</span>
-              </div>
-              <h4 class="mt-2 font-medium">Silky, steady footage</h4>
-              <p class="mt-1 text-sm text-slate-600">Cinematic motion with minimal micro‑jitter for clean editing.</p>
-            </article>
+            </div>
+            <div class="stack-layer absolute left-6 top-24 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md opacity-80 blur-[0.3px] scale-[0.98]">
+              <div class="flex items-center gap-2 text-slate-400 text-xs"><span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">02</span><span class="uppercase tracking-wide">Precision Control</span></div>
+              <h4 class="mt-2 font-medium text-slate-600">Agile motion in tight spaces</h4>
+              <p class="mt-2 text-sm text-slate-500">Confident moves around furniture for elegant reveals.</p>
+            </div>
+            <div class="stack-layer absolute left-12 top-44 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md opacity-60 blur-[0.6px] scale-[0.96]">
+              <div class="flex items-center gap-2 text-slate-400 text-xs"><span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">03</span><span class="uppercase tracking-wide">Advanced Stabilization</span></div>
+              <h4 class="mt-2 font-medium text-slate-600">Silky, steady footage</h4>
+              <p class="mt-2 text-sm text-slate-500">Minimal micro-jitter for clean editing.</p>
+            </div>
           </div>
 
-          <!-- CENTER CIRCLE (image restored) -->
-          <div class="relative mx-auto w-full max-w-[48rem] xl:max-w-[60rem]">
-            <div class="relative avata-circle aspect-square rounded-full bg-white ring-1 ring-black/5 shadow-xl flex items-center justify-center overflow-hidden">
+          <!-- CENTER CIRCLE -->
+          <div class="relative mx-auto w-full max-w-xl">
+            <div class="relative aspect-square rounded-full bg-white ring-1 ring-black/5 shadow-xl flex items-center justify-center overflow-hidden">
               <div class="absolute inset-0 rounded-full border border-slate-200"></div>
               <div class="absolute inset-6 rounded-full border border-slate-100"></div>
-              <img src="https://se-cdn.djiits.com/tpc/uploads/spu/cover/daf2c8fd679eb886c0ba45a1d015a5fc@xlarge.png" alt="DJI Avata FPV drone" class="relative z-[1] w-[98%] max-w-none drop-shadow-xl pointer-events-none select-none" />
+              <img src="https://se-cdn.djiits.com/tpc/uploads/spu/cover/daf2c8fd679eb886c0ba45a1d015a5fc@xlarge.png" alt="DJI Avata FPV drone" class="relative z-[1] w-4/5 max-w-md drop-shadow-xl pointer-events-none select-none" />
             </div>
-            
+            <div class="mt-6 text-center">
+              <h3 class="text-xl font-semibold">4K Ultra-HD Camera</h3>
+              <p class="mt-1 text-slate-600">Capture stunning walkthroughs with incredible clarity.</p>
+            </div>
           </div>
 
-          <!-- RIGHT STACK (02 front near circle → 04 deepest) -->
-          <div class="avata-side hidden lg:flex items-center justify-start stack-line pl-6 xl:pl-8">
-            <article class="stack-card d3 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
-              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
-                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">02</span>
-                <span class="uppercase">Intelligent Flight Modes</span>
+          <!-- RIGHT STACK -->
+          <div class="relative hidden lg:block h-[420px]">
+            <div class="stack-layer avata-card absolute right-0 top-0 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md cursor-pointer" aria-expanded="false">
+              <div class="relative z-[1]">
+                <div class="flex items-center gap-2 text-slate-400 text-xs">
+                  <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">02</span>
+                  <span class="uppercase tracking-wide">Intelligent Flight Modes</span>
+                </div>
+                <h4 class="mt-2 font-medium">Follow, Waypoints, and more</h4>
+                <p class="mt-2 text-sm text-slate-600">Automated aids that keep moves smooth and repeatable.</p>
               </div>
-              <h4 class="mt-2 font-medium">Follow, Waypoints, and more</h4>
-              <p class="mt-1 text-sm text-slate-600">Automated aids that keep moves smooth and repeatable.</p>
-            </article>
-            <article class="stack-card d2 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
-              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
-                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">03</span>
-                <span class="uppercase">4K Recording</span>
-              </div>
-              <h4 class="mt-2 font-medium">High‑detail image</h4>
-              <p class="mt-1 text-sm text-slate-600">Sharp picture and consistent color for YouTube, MLS and ads.</p>
-            </article>
-            <article class="stack-card d1 w-36 sm:w-40 h-72 shrink-0 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md">
-              <div class="flex items-center gap-2 text-slate-400 text-[11px] tracking-wide">
-                <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">04</span>
-                <span class="uppercase">Extended Flight Time</span>
-              </div>
-              <h4 class="mt-2 font-medium">Up to 20+ minutes</h4>
-              <p class="mt-1 text-sm text-slate-600">Plenty of endurance for multiple takes and exteriors.</p>
-            </article>
+            </div>
+            <div class="stack-layer absolute right-6 top-24 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md opacity-80 blur-[0.3px] scale-[0.98]">
+              <div class="flex items-center gap-2 text-slate-400 text-xs"><span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">03</span><span class="uppercase tracking-wide">4K Recording</span></div>
+              <h4 class="mt-2 font-medium text-slate-600">High-detail image</h4>
+              <p class="mt-2 text-sm text-slate-500">Consistent color for YouTube, MLS and ads.</p>
+            </div>
+            <div class="stack-layer absolute right-12 top-44 w-72 rounded-2xl bg-white p-5 ring-1 ring-black/5 shadow-md opacity-60 blur-[0.6px] scale-[0.96]">
+              <div class="flex items-center gap-2 text-slate-400 text-xs"><span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-slate-100 font-semibold">04</span><span class="uppercase tracking-wide">Extended Flight Time</span></div>
+              <h4 class="mt-2 font-medium text-slate-600">Up to 20+ minutes</h4>
+              <p class="mt-2 text-sm text-slate-500">Plenty of endurance for multiple takes and exteriors.</p>
+            </div>
           </div>
         </div>
 
-        <!-- MOBILE: simple list -->
+        <!-- MOBILE simple list -->
         <div class="mt-10 grid gap-3 lg:hidden">
           <details class="rounded-2xl bg-white p-5 ring-1 ring-black/5"><summary class="cursor-pointer font-medium">Advanced Obstacle Avoidance</summary><p class="mt-2 text-sm text-slate-600">Smart sensing to detect nearby objects for safer indoor flight.</p></details>
           <details class="rounded-2xl bg-white p-5 ring-1 ring-black/5"><summary class="cursor-pointer font-medium">Intelligent Flight Modes</summary><p class="mt-2 text-sm text-slate-600">Follow Me, Waypoints and more for effortless operation.</p></details>
-          <details class="rounded-2xl bg-white p-5 ring-1 ring-black/5"><summary class="cursor-pointer font-medium">Advanced Stabilization</summary><p class="mt-2 text-sm text-slate-600">Silky, steady footage with minimal micro‑jitter.</p></details>
+          <details class="rounded-2xl bg-white p-5 ring-1 ring-black/5"><summary class="cursor-pointer font-medium">Advanced Stabilization</summary><p class="mt-2 text-sm text-slate-600">Silky, steady footage with minimal micro-jitter.</p></details>
           <details class="rounded-2xl bg-white p-5 ring-1 ring-black/5"><summary class="cursor-pointer font-medium">Extended Flight Time</summary><p class="mt-2 text-sm text-slate-600">Up to 20+ minutes on a single charge.</p></details>
-        </div>
-
-        <div class="mt-8 text-center">
-          <h3 class="text-xl font-semibold">4K Ultra‑HD Camera</h3>
-          <p class="mt-1 text-slate-600">Capture stunning walkthroughs with incredible clarity.</p>
         </div>
 
         <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
           <a href="#work" class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white">View demos</a>
           <a href="#book" class="inline-flex items-center justify-center rounded-xl bg-emerald-400 px-5 py-3 text-sm font-semibold text-black">Book a flight</a>
         </div>
-
       </div>
     </section>
-
+    
     <!-- SERVICES -->
     <section id="services" class="py-20">
       <div class="mx-auto max-w-7xl px-5">
@@ -529,61 +515,85 @@
         </div>
       </div>
     </section>
-
-  <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <div class="section-header">
-                <h2>Simple, Transparent Pricing</h2>
-                <p>Choose the package that fits your needs. All packages include fast turnaround and unlimited revisions.</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="plan-name">Essential</div>
-                    <div class="plan-price">$299</div>
-                    <ul class="plan-features">
-                        <li>2-3 minute FPV video</li>
-                        <li>10 high-res photos</li>
-                        <li>Basic editing & color correction</li>
-                        <li>48-hour delivery</li>
-                        <li>1 revision included</li>
-                    </ul>
-                    <a href="#booking" class="plan-cta">Get Started</a>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="plan-name">Professional</div>
-                    <div class="plan-price">$499</div>
-                    <ul class="plan-features">
-                        <li>4-5 minute cinematic FPV video</li>
-                        <li>25 high-res photos</li>
-                        <li>3 social media reels</li>
-                        <li>Advanced editing & music</li>
-                        <li>24-hour delivery</li>
-                        <li>3 revisions included</li>
-                    </ul>
-                    <a href="#booking" class="plan-cta">Most Popular</a>
-                </div>
-                <div class="pricing-card">
-                    <div class="plan-name">Premium</div>
-                    <div class="plan-price">$799</div>
-                    <ul class="plan-features">
-                        <li>6-8 minute signature FPV video</li>
-                        <li>50 high-res photos</li>
-                        <li>5 social media reels</li>
-                        <li>3D virtual tour</li>
-                        <li>Same-day delivery available</li>
-                        <li>Unlimited revisions</li>
-                    </ul>
-                    <a href="#booking" class="plan-cta">Go Premium</a>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <p style="font-size: 1.1rem; color: var(--gray-700);"><strong>Volume Discounts:</strong> 20% off 5+ properties | 30% off 10+ properties | Custom pricing for 20+ properties</p>
-            </div>
+    
+    <!-- PRICING (summary) -->
+  <section id="pricing" class="py-20">
+      <div class="mx-auto max-w-7xl px-5">
+        <div class="mb-10 flex items-end justify-between gap-6">
+          <div>
+            <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight">Pricing</h2>
+            <p class="mt-2 text-white/70">Minimum order: 3 properties. Full pricing details below. </p>
+          </div>
+          <a href="#book" class="hidden md:inline-flex items-center justify-center rounded-xl bg-accent px-4 py-2 font-semibold text-black">Request a quote</a>
         </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="rounded-2xl bg-surface p-6 ring-1 ring-white/5">
+            <h3 class="font-medium text-lg">Base Package — FPV YouTube Tour</h3>
+            <ul class="mt-3 text-white/70 space-y-1 text-sm">
+              <li>4K FPV walkthrough (2–3 min)</li>
+              <li>Professional edit, music licensed, branding</li>
+              <li>Delivery 48–72 hours</li>
+            </ul>
+            <div class="mt-5 grid gap-2 text-sm">
+              <div class="flex items-center justify-between text-white/80"><span>3–5 properties</span><strong>$250</strong></div>
+              <div class="flex items-center justify-between text-white/80"><span>5–10 properties</span><strong>$225</strong></div>
+              <div class="flex items-center justify-between text-white/80"><span>10–15 properties</span><strong>$200</strong></div>
+              <div class="flex items-center justify-between text-white/80"><span>15+ properties</span><strong>$175</strong></div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-accent/10 p-6 ring-1 ring-accent/40">
+            <div class="text-accent text-xs font-semibold uppercase tracking-wide">Suggested bundle</div>
+            <h3 class="mt-1 font-medium text-lg">FPV + Photos</h3>
+            <p class="mt-2 text-white/70">Everything agents need for MLS and social while keeping budgets tight.</p>
+            <ul class="mt-3 text-white/70 space-y-1 text-sm">
+              <li>4K FPV walkthrough</li>
+              <li>20–30 HDR photos (interior/exterior + aerial)</li>
+              <li>Professional edit, ready to publish</li>
+            </ul>
+            <p class="mt-3 text-sm text-white/80">Typical range: <strong>$350–$400</strong> per property depending on portfolio size.</p>
+          </div>
+
+          <div class="rounded-2xl bg-surface p-6 ring-1 ring-white/5">
+            <h3 class="font-medium text-lg">Upgrade options (per property)</h3>
+            <ul class="mt-3 text-white/80 space-y-2 text-sm">
+              <li class="flex items-center justify-between"><span>Social Media Highlight (30–60s vertical)</span><strong>$75</strong></li>
+              <li class="flex items-center justify-between"><span>Professional Photo Set (20–30 HDR)</span><strong>$150</strong></li>
+              <li class="flex items-center justify-between"><span>3D Virtual Tour (interactive)</span><strong>$150</strong></li>
+              <li class="flex items-center justify-between"><span>Neighborhood / Lifestyle B-Roll</span><strong>$75</strong></li>
+              <li class="flex items-center justify-between"><span>Extra Social Highlight (alternate edit)</span><strong>$50</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#full-pricing" class="inline-flex items-center justify-center rounded-xl bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/15">View example package pricing</a>
+          <a href="#book" class="inline-flex items-center justify-center rounded-xl bg-accent px-4 py-2 text-sm font-semibold text-black">Get a quote</a>
+        </div>
+      </div>
     </section>
 
-
+    <!-- FULL PRICING TABLE -->
+    <section id="full-pricing" class="py-2">
+      <div class="mx-auto max-w-7xl px-5">
+        <details class="group rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 open:bg-white/5">
+          <summary class="cursor-pointer list-none">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-medium">Example Package Pricing (per property)</h3>
+              <span class="text-sm text-white/60 group-open:hidden">Expand</span>
+              <span class="hidden text-sm text-white/60 group-open:inline">Collapse</span>
+            </div>
+          </summary>
+          <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4 text-sm text-white/80">
+            <div class="rounded-xl bg-surface p-5 ring-1 ring-white/5"><div class="font-medium">FPV YouTube Tour Only</div><p class="mt-2">3–5: $250 · 5–10: $225 · 10–15: $200 · 15+: $175</p></div>
+            <div class="rounded-xl bg-surface p-5 ring-1 ring-white/5"><div class="font-medium">FPV + Social Media</div><p class="mt-2">3–5: $325 · 5–10: $300 · 10–15: $275 · 15+: $225</p></div>
+            <div class="rounded-xl bg-surface p-5 ring-1 ring-white/5"><div class="font-medium">FPV + Photos</div><p class="mt-2">3–5: $400 · 5–10: $375 · 10–15: $350 · 15+: $325</p></div>
+            <div class="rounded-xl bg-surface p-5 ring-1 ring-white/5"><div class="font-medium">Full Package (FPV + Social + Photos + 3D)</div><p class="mt-2">3–5: ~$625 · 5–10: ~$600 · 10–15: ~$575 · 15+: ~$550</p></div>
+          </div>
+        </details>
+      </div>
+    </section>
     <!-- TESTIMONIALS -->
     <section class="py-20">
       <div class="mx-auto max-w-7xl px-5">
