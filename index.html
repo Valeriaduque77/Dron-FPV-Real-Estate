@@ -47,6 +47,84 @@
       .avata-card:hover .overlay, .avata-card[aria-expanded="true"] .overlay { opacity: 1; transform: translateY(0); }
       .stack-layer { transition: transform .35s ease, opacity .35s ease, filter .35s ease; }
       .stack-layer:hover { filter: none; opacity: 1; transform: translateX(0) translateY(0) scale(1); }
+
+      /* NUEVOS ESTILOS PARA HERO SECTION */
+      .hero-bg {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          position: relative;
+          overflow: hidden;
+      }
+      
+      .hero-bg::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: url('https://i.ytimg.com/vi/QSlegMdpjpc/maxresdefault.jpg') center/cover;
+          opacity: 0.8;
+          z-index: 1;
+      }
+      
+      .hero-bg::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(to bottom, rgba(15, 17, 23, 0.3), rgba(15, 17, 23, 0.7));
+          z-index: 2;
+      }
+      
+      .hero-content {
+          position: relative;
+          z-index: 3;
+      }
+      
+      .floating-element {
+          animation: float 6s ease-in-out infinite;
+      }
+      
+      @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(2deg); }
+      }
+      
+      .feature-card {
+          backdrop-filter: blur(10px);
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: all 0.3s ease;
+      }
+      
+      .feature-card:hover {
+          background: rgba(255, 255, 255, 0.2);
+          transform: translateY(-5px);
+      }
+      
+      .pulse-ring {
+          animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+      }
+      
+      @keyframes pulse-ring {
+          0% {
+              transform: scale(0.8);
+              opacity: 1;
+          }
+          100% {
+              transform: scale(2.5);
+              opacity: 0;
+          }
+      }
+      
+      .tech-badge {
+          background: rgba(34, 227, 172, 0.1);
+          border: 1px solid rgba(34, 227, 172, 0.3);
+          color: #22e3ac;
+          backdrop-filter: blur(10px);
+      }
     </style>
   </head>
   <body class="bg-obsidian text-ink font-sans antialiased">
@@ -88,63 +166,117 @@
       </div>
     </header>
 
-<!-- HERO full-bleed con marco negro y franja blanca abajo -->
-<section id="home" class="relative pt-28">
-  <!-- full-bleed wrapper -->
-  <div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
-    <!-- Marco NEGRO con más margen lateral e inferior -->
-    <div class="relative mx-auto bg-black px-2 md:px-3 pb-2 pt-1 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,.45)] overflow-visible">
-      <!-- Media -->
-      <div class="relative overflow-hidden rounded-xl">
-        <img
-          src="https://i.ytimg.com/vi/QSlegMdpjpc/maxresdefault.jpg"
-          alt="DJI Avata - Real estate FPV"
-          class="block w-full h-[56vh] md:h-[72vh] object-cover object-[50%_20%]" />
-        
-        <!-- Título CENTRADO debajo del dron -->
-        <h1
-          class="pointer-events-none absolute left-1/2 top-[58%] -translate-x-1/2 -translate-y-1/2
-                 w-full px-6 text-center font-display
-                 text-[40px] leading-[1.05] sm:text-6xl lg:text-7xl xl:text-8xl
-                 font-semibold tracking-tight text-white drop-shadow-[0_8px_30px_rgba(0,0,0,.7)]">
-          REAL ESTATE VIDEOS
-        </h1>
-
-        <!-- Botón centrado (texto BLANCO) -->
-        <a href="#book"
-           class="absolute bottom-5 left-1/2 -translate-x-1/2 inline-flex items-center justify-center
-                  rounded-xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-white
-                  shadow-lg hover:shadow-xl hover:bg-emerald-600 transition">
-          Book a flight
-        </a>
-      </div>
-
-      <!-- Flecha: marco negro “abrazando” la flecha -->
-      <button
-        aria-label="Scroll"
-        onclick="document.getElementById('hero-after').scrollIntoView({behavior:'smooth'})"
-        class="absolute -bottom-4 left-1/2 -translate-x-1/2 grid h-10 w-10 place-items-center
-               rounded-full bg-white ring-1 ring-black/10 shadow-[0_6px_20px_rgba(0,0,0,.25)]">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
+<!-- HERO SECTION COMPLETAMENTE NUEVA -->
+<section id="home" class="hero-bg min-h-screen flex items-center pt-20">
+    <div class="hero-content w-full">
+        <div class="mx-auto max-w-7xl px-5">
+            <div class="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+                
+                <!-- Left Column: Content -->
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <!-- Badge -->
+                        <div class="inline-flex items-center gap-2 tech-badge rounded-full px-4 py-2 text-sm font-medium">
+                            <div class="relative">
+                                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                                <div class="pulse-ring absolute inset-0 w-2 h-2 bg-accent rounded-full"></div>
+                            </div>
+                            Professional FPV Services
+                        </div>
+                        
+                        <!-- Main Title -->
+                        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+                            <span class="block">REAL ESTATE</span>
+                            <span class="block text-accent">VIDEOS</span>
+                        </h1>
+                        
+                        <!-- Subtitle -->
+                        <p class="text-xl text-white/80 max-w-2xl leading-relaxed">
+                            FPV cinematic walkthroughs inside and out, aerials, photos, reels, and 3D — professionally edited and delivered in 48–72 hours.
+                        </p>
+                    </div>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#book" class="inline-flex items-center justify-center rounded-xl bg-accent px-8 py-4 text-lg font-semibold text-black hover:shadow-soft transition-all duration-300 hover:scale-105">
+                            Book a Flight
+                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                        <a href="#work" class="inline-flex items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-medium text-white hover:bg-white/20 transition-all duration-300">
+                            View Portfolio
+                        </a>
+                    </div>
+                    
+                    <!-- Feature Cards -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+                        <div class="feature-card rounded-xl p-4 text-center">
+                            <div class="text-accent font-semibold text-sm">48–72h</div>
+                            <div class="text-white/80 text-xs mt-1">Fast Delivery</div>
+                        </div>
+                        <div class="feature-card rounded-xl p-4 text-center">
+                            <div class="text-accent font-semibold text-sm">Licensed</div>
+                            <div class="text-white/80 text-xs mt-1">Pilots</div>
+                        </div>
+                        <div class="feature-card rounded-xl p-4 text-center">
+                            <div class="text-accent font-semibold text-sm">Insured</div>
+                            <div class="text-white/80 text-xs mt-1">& Bonded</div>
+                        </div>
+                        <div class="feature-card rounded-xl p-4 text-center">
+                            <div class="text-accent font-semibold text-sm">Multi-City</div>
+                            <div class="text-white/80 text-xs mt-1">Coverage</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Visual -->
+                <div class="relative">
+                    <!-- Main drone image with floating animation -->
+                    <div class="relative floating-element">
+                        <img 
+                            src="https://se-cdn.djiits.com/tpc/uploads/spu/cover/daf2c8fd679eb886c0ba45a1d015a5fc@xlarge.png" 
+                            alt="DJI Avata FPV drone" 
+                            class="w-full max-w-lg mx-auto drop-shadow-2xl"
+                        />
+                        
+                        <!-- Glowing ring effect -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-96 h-96 rounded-full border border-accent/20 absolute animate-spin" style="animation-duration: 20s;"></div>
+                            <div class="w-80 h-80 rounded-full border border-accent/10 absolute animate-spin" style="animation-duration: 15s; animation-direction: reverse;"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats Cards Floating Around -->
+                    <div class="absolute top-10 -left-10 feature-card rounded-xl p-3 text-center transform rotate-3">
+                        <div class="text-accent font-bold text-lg">4K</div>
+                        <div class="text-white/80 text-xs">Ultra HD</div>
+                    </div>
+                    
+                    <div class="absolute top-32 -right-8 feature-card rounded-xl p-3 text-center transform -rotate-2">
+                        <div class="text-accent font-bold text-lg">20min</div>
+                        <div class="text-white/80 text-xs">Flight Time</div>
+                    </div>
+                    
+                    <div class="absolute bottom-20 -left-8 feature-card rounded-xl p-3 text-center transform rotate-1">
+                        <div class="text-accent font-bold text-lg">Safe</div>
+                        <div class="text-white/80 text-xs">Indoor Flight</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+                <div class="flex flex-col items-center space-y-2 text-white/60">
+                    <span class="text-sm">Scroll to explore</span>
+                    <div class="w-px h-16 bg-gradient-to-b from-accent to-transparent"></div>
+                    <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+                        <div class="w-1 h-3 bg-accent rounded-full mt-2 animate-bounce"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-
-  <!-- Franja BLANCA con texto y chips (sigue igual) -->
-  <div id="hero-after" class="mx-auto mt-14 max-w-5xl rounded-2xl bg-white px-6 py-8 text-center shadow-[0_12px_30px_rgba(0,0,0,.25)]">
-    <p class="mx-auto max-w-3xl text-slate-800">
-      FPV cinematic walkthroughs inside and out, aerials, photos, reels, and 3D — professionally edited
-      and delivered in 48–72 hours.
-    </p>
-    <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto text-sm">
-      <div class="rounded-xl bg-slate-100 px-4 py-2 ring-1 ring-slate-200 text-slate-700">Delivery 48–72h</div>
-      <div class="rounded-xl bg-slate-100 px-4 py-2 ring-1 ring-slate-200 text-slate-700">Licensed pilots</div>
-      <div class="rounded-xl bg-slate-100 px-4 py-2 ring-1 ring-slate-200 text-slate-700">Insured</div>
-      <div class="rounded-xl bg-slate-100 px-4 py-2 ring-1 ring-slate-200 text-slate-700">Multi-city coverage</div>
-    </div>
-  </div>
 </section>
 
     <!-- AVATA (DJI) -->
@@ -297,250 +429,4 @@
           <a class="group relative aspect-video overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10" href="#book"><div class="absolute inset-0 flex items-center justify-center text-white/60">Video Placeholder</div></a>
           <a class="group relative aspect-video overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10" href="#book"><div class="absolute inset-0 flex items-center justify-center text-white/60">Video Placeholder</div></a>
           <a class="group relative aspect-video overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10" href="#book"><div class="absolute inset-0 flex items-center justify-center text-white/60">Video Placeholder</div></a>
-          <a class="group relative aspect-video overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10" href="#book"><div class="absolute inset-0 flex items-center justify-center text-white/60">Video Placeholder</div></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section class="py-20">
-      <div class="mx-auto max-w-7xl px-5">
-        <div class="mb-10">
-          <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight">How it works</h2>
-          <p class="mt-2 max-w-2xl text-white/70">A simple four‑step workflow that respects timelines and brand consistency.</p>
-        </div>
-        <div class="grid gap-6 md:grid-cols-4">
-          <div class="rounded-2xl bg-surface p-6 ring-1 ring-white/5"><div class="text-accent text-sm font-semibold">01</div><h3 class="mt-2 font-medium">Brief</h3><p class="mt-2 text-white/70">Share the listing, goals and brand elements. We confirm flight plan and schedule.</p></div>
-          <div class="rounded-2xl bg-surface p-6 ring-1 ring-white/5"><div class="text-accent text-sm font-semibold">02</div><h3 class="mt-2 font-medium">Prep</h3><p class="mt-2 text-white/70">Location prep checklist, safety and permits. We align on key highlights.</p></div>
-          <div class="rounded-2xl bg-surface p-6 ring-1 ring-white/5"><div class="text-accent text-sm font-semibold">03</div><h3 class="mt-2 font-medium">Shoot</h3><p class="mt-2 text-white/70">FPV in/out, aerials and stills. Efficient on‑site coordination with agents.</p></div>
-          <div class="rounded-2xl bg-surface p-6 ring-1 ring-white/5"><div class="text-accent text-sm font-semibold">04</div><h3 class="mt-2 font-medium">Deliver</h3><p class="mt-2 text-white/70">Edit and color in 48–72 hours. Exports for YouTube, MLS and social.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICING (summary) -->
-    <section class="pricing" id="pricing">
-  <div class="container mx-auto max-w-7xl px-5">
-    <div class="section-header mb-10 text-center">
-      <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight">Simple, Transparent Pricing</h2>
-      <p class="mt-2 text-white/70">Choose the package that fits your needs. All packages include fast turnaround and unlimited revisions.</p>
-    </div>
-
-    <div class="pricing-grid">
-      <!-- Essential -->
-      <div class="pricing-card">
-        <div class="plan-name">Essential</div>
-        <div class="plan-price">$299</div>
-        <ul class="plan-features">
-          <li>2–3 minute FPV video</li>
-          <li>10 high‑res photos</li>
-          <li>Basic editing & color correction</li>
-          <li>48‑hour delivery</li>
-          <li>1 revision included</li>
-        </ul>
-        <a href="#booking" class="plan-cta">Get Started</a>
-      </div>
-
-      <!-- Professional (Featured) -->
-      <div class="pricing-card featured">
-        <div class="plan-name">Professional</div>
-        <div class="plan-price">$499</div>
-        <ul class="plan-features">
-          <li>4–5 minute cinematic FPV video</li>
-          <li>25 high‑res photos</li>
-          <li>3 social media reels</li>
-          <li>Advanced editing & music</li>
-          <li>24‑hour delivery</li>
-          <li>3 revisions included</li>
-        </ul>
-        <a href="#booking" class="plan-cta">Most Popular</a>
-      </div>
-
-      <!-- Premium -->
-      <div class="pricing-card">
-        <div class="plan-name">Premium</div>
-        <div class="plan-price">$799</div>
-        <ul class="plan-features">
-          <li>6–8 minute signature FPV video</li>
-          <li>50 high‑res photos</li>
-          <li>5 social media reels</li>
-          <li>3D virtual tour</li>
-          <li>Same‑day delivery available</li>
-          <li>Unlimited revisions</li>
-        </ul>
-        <a href="#booking" class="plan-cta">Go Premium</a>
-      </div>
-    </div>
-
-    <div class="mt-10 text-center">
-      <p style="font-size:1.1rem;color:var(--gray-700);"><strong>Volume Discounts:</strong> 20% off 5+ properties | 30% off 10+ properties | Custom pricing for 20+ properties</p>
-    </div>
-  </div>
-</section>
-
-    <!-- FULL PRICING TABLE (collapsible) -->
-    <section id="full-pricing" class="py-2">
-      <div class="mx-auto max-w-7xl px-5">
-        <details class="group rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 open:bg-white/5">
-          <summary class="cursor-pointer list-none">
-            <div class="flex items-center justify-between">
-              <h3 class="text-lg font-medium">Example Package Pricing (per property)</h3>
-              <span class="text-sm text-white/60 group-open:hidden">Expand</span>
-              <span class="hidden text-sm text-white/60 group-open:inline">Collapse</span>
-            </div>
-          </summary>
-          <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4 text-sm text-white/80">
-            <div class="rounded-xl bg-surface p-5 ring-1 ring-white/5"><div class="font-medium">FPV YouTube Tour Only</div><p class="mt-2">3–5: $250 · 5–10: $225 · 10–15: $200 · 15+: $175</p></div>
-            <div class="rounded-xl bg-surface p-5 ring-1 ring-white/5"><div class="font-medium">FPV + Social Media</div><p class="mt-2">3–5: $325 · 5–10: $300 · 10–15: $275 · 15+: $225</p></div>
-            <div class="rounded-xl bg-surface p-5 ring-1 ring-white/5"><div class="font-medium">FPV + Photos</div><p class="mt-2">3–5: $400 · 5–10: $375 · 10–15: $350 · 15+: $325</p></div>
-            <div class="rounded-xl bg-surface p-5 ring-1 ring-white/5"><div class="font-medium">Full Package (FPV + Social + Photos + 3D)</div><p class="mt-2">3–5: ~$625 · 5–10: ~$600 · 10–15: ~$575 · 15+: ~$550</p></div>
-          </div>
-        </details>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="py-20">
-      <div class="mx-auto max-w-7xl px-5">
-        <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight">Agent feedback</h2>
-        <div class="mt-8 grid gap-6 md:grid-cols-3">
-          <figure class="rounded-2xl bg-surface p-6 ring-1 ring-white/5"><blockquote class="text-white/80">“The FPV tour tripled our online engagement and helped us book showings the first weekend.”</blockquote><figcaption class="mt-4 text-sm text-white/60">— Broker, FL</figcaption></figure>
-          <figure class="rounded-2xl bg-surface p-6 ring-1 ring-white/5"><blockquote class="text-white/80">“Fast delivery, consistent color, and edits tailored to our brand. Exactly what we needed.”</blockquote><figcaption class="mt-4 text-sm text-white/60">— Team Lead, NYC</figcaption></figure>
-          <figure class="rounded-2xl bg-surface p-6 ring-1 ring-white/5"><blockquote class="text-white/80">“Photos + FPV is our go‑to bundle. One vendor, one timeline, polished results.”</blockquote><figcaption class="mt-4 text-sm text-white/60">— Agent, TX</figcaption></figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-20">
-      <div class="mx-auto max-w-7xl px-5">
-        <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight">FAQ</h2>
-        <div class="mt-8 grid gap-4 md:grid-cols-2">
-          <details class="rounded-2xl bg-surface p-6 ring-1 ring-white/5">
-            <summary class="cursor-pointer text-white/90 font-medium">What is included in the base FPV tour?</summary>
-            <p class="mt-3 text-white/70">A 2–3 minute 4K cinematic walkthrough covering outside and inside, professional edit with licensed music, agent branding, and exports for YouTube and MLS.</p>
-          </details>
-          <details class="rounded-2xl bg-surface p-6 ring-1 ring-white/5">
-            <summary class="cursor-pointer text-white/90 font-medium">How fast is delivery?</summary>
-            <p class="mt-3 text-white/70">Typical turnaround is 48–72 hours after the shoot. Rush options available upon request.</p>
-          </details>
-          <details class="rounded-2xl bg-surface p-6 ring-1 ring-white/5">
-            <summary class="cursor-pointer text-white/90 font-medium">Are you insured and licensed?</summary>
-            <p class="mt-3 text-white/70">Yes. We operate with insured, licensed pilots and follow property and airspace regulations.</p>
-          </details>
-          <details class="rounded-2xl bg-surface p-6 ring-1 ring-white/5">
-            <summary class="cursor-pointer text-white/90 font-medium">Do you travel?</summary>
-            <p class="mt-3 text-white/70">We serve multiple cities and can coordinate travel once portfolio size is confirmed.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT / CTA -->
-    <section id="about" class="py-20">
-      <div class="mx-auto max-w-7xl px-5">
-        <div class="grid items-center gap-10 md:grid-cols-2">
-          <div>
-            <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight">About</h2>
-            <p class="mt-3 text-white/80">Cinematic Realty Media produces high‑impact real estate visuals — FPV, aerials, photography and short‑form content — designed for listings, brand storytelling and paid media. Our process emphasizes safety, speed and editorial consistency.</p>
-            <div class="mt-6 flex gap-3">
-              <a href="#work" class="inline-flex items-center justify-center rounded-xl bg-white/10 px-4 py-2 font-medium text-white hover:bg-white/15">See work</a>
-              <a href="#book" class="inline-flex items-center justify-center rounded-xl bg-accent px-4 py-2 font-semibold text-black">Start a project</a>
-            </div>
-          </div>
-          <div class="aspect-video rounded-2xl bg-white/5 ring-1 ring-white/10"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT / BOOK -->
-    <section id="book" class="py-20">
-      <div class="mx-auto max-w-7xl px-5">
-        <div class="rounded-2xl bg-surface p-8 ring-1 ring-white/5 md:p-10">
-          <div class="grid gap-8 md:grid-cols-2">
-            <div>
-              <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight">Book a flight</h2>
-              <p class="mt-2 text-white/80">Tell us about your listings and preferred dates. We’ll confirm availability and send a clear estimate.</p>
-              <ul class="mt-6 space-y-2 text-white/70 text-sm">
-                <li>• Minimum order: 3 properties</li>
-                <li>• Delivery 48–72 hours</li>
-                <li>• Licensed & insured</li>
-              </ul>
-              <div class="mt-6 flex flex-col sm:flex-row gap-3">
-                <a href="mailto:info@cinematicrealtymedia.com" class="inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 font-semibold text-black">Email us</a>
-                <a href="#" class="inline-flex items-center justify-center rounded-xl bg-white/10 px-5 py-3 font-medium text-white hover:bg-white/15">Schedule a call</a>
-              </div>
-            </div>
-            <form class="grid gap-4">
-              <div class="grid gap-2">
-                <label class="text-sm text-white/80">Name</label>
-                <input type="text" class="rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10 outline-none focus:ring-accent/60" placeholder="Your name" required />
-              </div>
-              <div class="grid gap-2">
-                <label class="text-sm text-white/80">Email</label>
-                <input type="email" class="rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10 outline-none focus:ring-accent/60" placeholder="you@company.com" required />
-              </div>
-              <div class="grid gap-2">
-                <label class="text-sm text-white/80">City / Area</label>
-                <input type="text" class="rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10 outline-none focus:ring-accent/60" placeholder="City, State" />
-              </div>
-              <div class="grid gap-2">
-                <label class="text-sm text-white/80">Portfolio size</label>
-                <select class="rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10 outline-none focus:ring-accent/60">
-                  <option>3–5 properties</option>
-                  <option>5–10 properties</option>
-                  <option>10–15 properties</option>
-                  <option>15+ properties</option>
-                </select>
-              </div>
-              <div class="grid gap-2">
-                <label class="text-sm text-white/80">Message</label>
-                <textarea rows="4" class="rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10 outline-none focus:ring-accent/60" placeholder="Listing links, timeline, add‑ons"></textarea>
-              </div>
-              <button class="mt-2 inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 font-semibold text-black" type="submit">Request quote</button>
-              <p class="text-xs text-white/50">By submitting, you agree to be contacted about your inquiry. We respect your time and inbox.</p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="border-t border-white/10">
-      <div class="mx-auto max-w-7xl px-5 py-10 text-sm text-white/60">
-        <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div>&copy; <span id="year"></span> Cinematic Realty Media. All rights reserved.</div>
-          <div class="flex gap-6">
-            <a href="#work" class="hover:text-white">Portfolio</a>
-            <a href="#services" class="hover:text-white">Services</a>
-            <a href="#pricing" class="hover:text-white">Pricing</a>
-            <a href="#book" class="hover:text-white">Contact</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      // Mobile menu toggle
-      const btn = document.getElementById('menuBtn');
-      const menu = document.getElementById('mobileMenu');
-      btn && btn.addEventListener('click', () => menu.classList.toggle('hidden'));
-      // Year
-      document.getElementById('year').textContent = new Date().getFullYear();
-      // Interactive reveal on desktop cards (click toggles for touch devices)
-      document.querySelectorAll('.avata-card').forEach(card => {
-        card.addEventListener('click', () => {
-          const expanded = card.getAttribute('aria-expanded') === 'true';
-          card.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-        });
-      });
-      // Interactive reveal on desktop cards (click toggles for touch devices)
-      document.querySelectorAll('.avata-card').forEach(card => {
-        card.addEventListener('click', () => {
-          const expanded = card.getAttribute('aria-expanded') === 'true';
-          card.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-        });
-      });
-    </script>
-  </body>
-</html>
+          <a class="group relative aspect-video overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10" href="#book"><div class="absolute inset-0 flex items-center justify-center text-white/60">Video Placeholder
